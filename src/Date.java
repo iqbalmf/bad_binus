@@ -1,6 +1,8 @@
+import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Date {
     public static void main(String[] args) {
@@ -10,6 +12,11 @@ public class Date {
         nameWeekends();
         //3. change calendar
         addTimeCalendar();
+
+        //change country
+        changeCountry();
+        //different format
+        diffFormatDate();
     }
 
     private static void MMMFormat() {
@@ -39,5 +46,19 @@ public class Date {
         System.out.println("setelah 2 hari: "+calendar.getTime().toString());
         calendar.add(Calendar.YEAR, 3);
         System.out.println("setelah 3 tahun: "+ calendar.getTime().toString());
+    }
+
+    private static void changeCountry(){
+        java.util.Date d1 = new java.util.Date();
+        System.out.println("today is "+ d1.toString());
+        Locale locItalian = new Locale("in","ID");
+        DateFormat df = DateFormat.getDateInstance
+                (DateFormat.FULL, locItalian);
+        System.out.println("today is in Indonesia Language in Bahasa Format : "+ df.format(d1));
+    }
+
+    private static void diffFormatDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+        System.out.println(sdf.format(new java.util.Date()));
     }
 }
