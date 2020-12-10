@@ -17,6 +17,11 @@ public class Date {
         changeCountry();
         //different format
         diffFormatDate();
+
+        //AMPM
+        AMPM();
+        //24 Hour Format
+        Hour24Format();
     }
 
     private static void MMMFormat() {
@@ -60,5 +65,20 @@ public class Date {
     private static void diffFormatDate(){
         SimpleDateFormat sdf = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
         System.out.println(sdf.format(new java.util.Date()));
+    }
+
+    private static void AMPM(){
+        java.util.Date date = new java.util.Date();
+        String strDateFormat = "HH:mm:ss a";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        System.out.println(sdf.format(date));
+    }
+
+    private static void Hour24Format(){
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("h");
+        System.out.println("format jam/h in 24 hours : "
+                + sdf.format(date));
+
     }
 }
