@@ -11,6 +11,11 @@ public class Forum5Bad {
         //Enum & Switch & for each loop
         System.out.println("Enum & Switch & for each loop:");
         Switch(Shoes.air_max);
+
+        //Enum with variable arguments with overloading
+        System.out.println("Enum with variable arguments with overloading");
+        var_args("Iqbal", 5, 7, 9);
+        var_args("Fauzan");
     }
 
     static void OverloadingEx(String fullname){
@@ -58,5 +63,14 @@ public class Forum5Bad {
                 System.out.println("Anda tidak memilih sepatu yang disediakan");
                 break;
         }
+    }
+
+    static void var_args(String texts, int ...ints) {
+        System.out.println("String text: "+texts);
+        System.out.println("Jumlah argument: "+ints.length);
+        for (int number: ints){
+            System.out.print(number+" ");
+        }
+        System.out.println();
     }
 }
