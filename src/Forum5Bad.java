@@ -6,7 +6,11 @@ public class Forum5Bad {
         OverloadingEx("Iqbal", "Fauzan");
         //Factorial Number Counting
         System.out.println("Menghitung nilai faktorial 10!");
-        System.out.println("10!: "+countFactorial(10));
+        System.out.println("10!: "+countFactorial(10)+"\n");
+
+        //Enum & Switch & for each loop
+        System.out.println("Enum & Switch & for each loop:");
+        Switch(Shoes.air_max);
     }
 
     static void OverloadingEx(String fullname){
@@ -20,5 +24,39 @@ public class Forum5Bad {
     public static long countFactorial(int number){
         if (number <= 1) return 1;
         else return number * countFactorial(number - 1 );
+    }
+
+    enum Shoes {
+        air_jordan(2000), air_max(1000), yezzy(1500);
+        private final int price;
+
+        Shoes(int p) {
+            price = p;
+        }
+
+        int getPrice() {
+            return price;
+        }
+    }
+
+    private static void Switch(Shoes shoes){
+        for (Shoes c: Shoes.values()){
+            System.out.println("sepatu "+c+" harganya "+c.getPrice()+"$");
+        }
+
+        switch (shoes){
+            case yezzy:
+                System.out.println("Anda Memilih sepatu yezzy dengan harga:"+shoes.getPrice()+"$");
+                break;
+            case air_max:
+                System.out.println("Anda Memilih sepatu Air Max dengan harga:"+shoes.getPrice()+"$");
+                break;
+            case air_jordan:
+                System.out.println("Anda Memilih sepatu Air Jordan dengan harga:"+shoes.getPrice()+"$");
+                break;
+            default:
+                System.out.println("Anda tidak memilih sepatu yang disediakan");
+                break;
+        }
     }
 }
