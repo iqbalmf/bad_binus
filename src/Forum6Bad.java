@@ -33,5 +33,17 @@ public class Forum6Bad {
 
         //memeriksa keberadaan file
         System.out.println(file.exists());
+
+        //membuat file read-only
+        System.out.println(file.setReadOnly());
+        System.out.println(file.canWrite());
+
+        //mengganti nama file
+        File newFile = new File("/Users/iqbalfauzan/mywork/kuliah/bad/forum_bad_new.txt");
+        if (file.renameTo(newFile)){
+            System.out.println("success rename file");
+        } else {
+            System.out.println("failed to rename file");
+        }
     }
 }
