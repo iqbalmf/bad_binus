@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
@@ -44,6 +46,18 @@ public class Forum6Bad {
             System.out.println("success rename file");
         } else {
             System.out.println("failed to rename file");
+        }
+
+        //menambah string ke file
+        try {
+            BufferedWriter out = new
+                    BufferedWriter(new FileWriter("outfilename"));
+            out.write("aString");
+            out.close();
+            System.out.println
+                    ("File created successfully");
+        }
+        catch (IOException e) {
         }
     }
 }
