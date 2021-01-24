@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class Forum11Bad {
     private final int maxSize;
     private final long[] stackArray;
@@ -11,6 +13,17 @@ public class Forum11Bad {
 
     public static void main(String[] args) {
         stack();
+
+
+        LinkedList<String> lList = new LinkedList<String>();
+        lList.add("1");
+        lList.add("8");
+        lList.add("6");
+        lList.add("4");
+        lList.add("5");
+        System.out.println(lList);
+        lList.subList(1, 3).clear();
+        System.out.println(lList);
     }
 
     private static void stack() {
